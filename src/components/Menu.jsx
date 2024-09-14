@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import MenuItemCard from './MenuItemCard';
-import EditMenuItemModal from './EditMenuItemModal';
-import { menuServices } from '../services/menuServices';
-import { ImSpinner2 } from "react-icons/im";
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react'
+import MenuItemCard from './MenuItemCard'
+import EditMenuItemModal from './EditMenuItemModal'
+import { menuServices } from '../services/menuServices'
+import { ImSpinner2 } from "react-icons/im"
+import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 
 const Menu = ({ menu }) => {
@@ -16,7 +17,7 @@ const Menu = ({ menu }) => {
     burgers: [],
     sides: [],
     drinks: [],
-  });
+  })
 
   const [currentItem, setCurrentItem] = useState(null)
   const [currentSection, setCurrentSection] = useState(null)
