@@ -12,9 +12,10 @@ const updateMenu = async (items) => {
             Authorization: `Bearer ${token}`
         }
         })
-
+        
     } catch (error) {
         console.error('Request failed:', error)
+        throw error
     }
 }
 

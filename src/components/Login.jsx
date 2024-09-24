@@ -12,7 +12,7 @@ const Login = () => {
     e.preventDefault()
     try{
       const res = await authService.loginAndStoreToken(username, password)
-      if(res){
+      if(res || localStorage.getItem("authToken")){
         navigate("/menu")
       }
     } catch(err){

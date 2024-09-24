@@ -83,8 +83,17 @@ const Menu = ({ menu }) => {
       const sectionItems = sections[section].map(({ _id, ...rest }) => rest) // Exclude _id for new items
       return { ...acc, [section]: sectionItems }
     }, {})
-    menuServices.updateMenu(itemsToSend)
-    console.log('Save all menu items:', itemsToSend)
+    
+    try{
+      const res = menuServices.updateMenu(itemsToSend)
+      if(res){
+        toast.success("Menu updated!")
+      }
+      
+    }catch(e){
+      toast.error("Error!")
+    }
+    
   }
 
   return (
